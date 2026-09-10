@@ -1,165 +1,165 @@
 const stories = [
   {
     id: 'last-train',
-    title: 'The Last Train Home',
-    logline: 'Some goodbyes arrive before the train does.',
+    title: 'Aakhri Train Home',
+    logline: 'Kuch goodbyes train se pehle aa jaate hain.',
     genre: 'Romance',
     tag: 'Romance',
-    role: 'You are · the one who stayed',
+    role: 'Tum ho · jo ruk gaya',
     cast: 'Mara & Elio',
     chapter: 'Chapter 04 of 12',
     progress: 42,
     cover: 'cover-last-train',
     character: 'Mara',
-    characterRole: 'Your almost-something',
-    online: 'on the platform',
-    memory: ['You always notice the little things', 'You promised not to leave without saying goodbye'],
-    scene: 'The station clock clicks over to 11:57. Rain draws silver lines across the glass roof, and the last train is already humming at the platform.',
+    characterRole: 'Tumhara almost-something',
+    online: 'platform par',
+    memory: ['Tum hamesha chhoti details notice karte ho', 'Tumne bina goodbye kahe jaane ka promise nahi kiya tha'],
+    scene: 'Station ki clock 11:57 par click karti hai. Glass roof par baarish silver lines kheench rahi hai, aur last train platform par dheere-dheere garam saans le rahi hai.',
     messages: [
-      { type: 'character', author: 'Mara', text: 'You actually came.', time: '11:57 PM' },
-      { type: 'character', author: 'Mara', text: 'She looks at the train, then back at you. “I told myself I would leave whether you showed up or not.”', time: '11:58 PM' },
-      { type: 'user', author: 'You', text: 'I walk past the ticket gate and call her name.', time: '11:58 PM' },
-      { type: 'character', author: 'Mara', text: 'The corner of her mouth moves, almost a smile. “That is a very inconvenient thing to do right now.”', time: '11:59 PM' }
+      { type: 'character', author: 'Mara', text: 'Tum sach mein aa gaye.', time: '11:57 PM' },
+      { type: 'character', author: 'Mara', text: 'Woh train ko dekhti hai, phir tumhari taraf. “Maine khud se kaha tha ki tum aao ya na aao, main chali jaungi.”', time: '11:58 PM' },
+      { type: 'user', author: 'Tum', text: 'Main ticket gate cross karke uska naam pukarta hoon.', time: '11:58 PM' },
+      { type: 'character', author: 'Mara', text: 'Uske honton ka kona, almost smile jaisa, hilta hai. “Abhi ye karna bahut inconvenient hai, pata hai?”', time: '11:59 PM' }
     ],
     replies: [
-      'Mara looks down at the ticket in her hand. “Then tell me what I am supposed to do with that.”',
-      'For a second, the platform is quiet except for the rain. She takes one small step closer.',
-      '“You always wait until the last possible minute,” she says, but she does not board the train.'
+      'Mara apne haath ke ticket ko dekhti hai. “Toh batao, main is baat ka karun kya?”',
+      'Ek pal ke liye platform par sirf baarish ki awaaz hai. Woh ek chhota sa step tumhari taraf leti hai.',
+      '“Tum hamesha last possible minute tak wait karte ho,” woh kehti hai, par train mein chadhti nahi.'
     ]
   },
   {
     id: 'red-thread',
-    title: 'Red Thread, Blue Hour',
-    logline: 'A missed connection keeps finding you.',
+    title: 'Laal Dhaaga, Blue Hour',
+    logline: 'Ek missed connection baar-baar tum tak laut aata hai.',
     genre: 'Romance',
     tag: 'Slow burn',
-    role: 'You are · the one who left',
+    role: 'Tum ho · jo chhod kar gaya',
     cast: 'Nina & you',
     chapter: 'Chapter 02 of 09',
     progress: 23,
     cover: 'cover-red-thread',
     character: 'Nina',
-    characterRole: 'The person from platform 6',
-    online: 'under the red umbrella',
-    memory: ['You never answered her last message', 'She remembers your coffee order'],
-    scene: 'A city bus sighs at the curb. Under a red umbrella, someone is holding the same paper ticket you tore in half three summers ago.',
+    characterRole: 'Platform 6 wala insaan',
+    online: 'laal umbrella ke neeche',
+    memory: ['Tumne uska last message kabhi answer nahi kiya', 'Use tumhara coffee order yaad hai'],
+    scene: 'City bus curb par ruk kar ek lambi saans leti hai. Laal umbrella ke neeche koi wahi paper ticket pakde hai jise tumne teen summers pehle aadha phaad diya tha.',
     messages: [
-      { type: 'character', author: 'Nina', text: 'I wondered if you would recognize me.', time: '6:42 PM' },
-      { type: 'user', author: 'You', text: 'I recognize the umbrella first.', time: '6:43 PM' },
-      { type: 'character', author: 'Nina', text: '“Good. I was afraid I had to start with the part where I say your name.”', time: '6:43 PM' }
+      { type: 'character', author: 'Nina', text: 'Mujhe sochna pada, tum mujhe pehchaanoge bhi ya nahi.', time: '6:42 PM' },
+      { type: 'user', author: 'Tum', text: 'Sabse pehle umbrella pehchaana.', time: '6:43 PM' },
+      { type: 'character', author: 'Nina', text: '“Achha hai. Mujhe laga tha shuruat tumhara naam lekar karni padegi.”', time: '6:43 PM' }
     ],
     replies: [
-      'Nina tilts the umbrella toward you. “You can stand here, if you want.”',
-      'She unfolds the old ticket between you. The ink has faded, but the date is still legible.',
-      '“You left before I could ask you to stay,” she says softly.'
+      'Nina umbrella tumhari taraf jhuka deti hai. “Agar chaho toh yahan khade ho sakte ho.”',
+      'Woh purana ticket tum dono ke beech kholti hai. Ink fade ho chuki hai, par date abhi bhi padh sakte ho.',
+      '“Tum chale gaye, isse pehle ki main tumhe rukne ko keh paati,” woh dheere se kehti hai.'
     ]
   },
   {
     id: 'moon-garden',
-    title: 'The Moon Garden',
-    logline: 'The last living thing on the moon knows your name.',
+    title: 'Chand ka Garden',
+    logline: 'Moon par bachi aakhri zinda cheez tumhara naam jaanti hai.',
     genre: 'Sci-fi',
     tag: 'Sci-fi',
-    role: 'You are · the new botanist',
+    role: 'Tum ho · naye botanist',
     cast: 'Iris & the garden',
     chapter: 'Chapter 05 of 16',
     progress: 58,
     cover: 'cover-moon-garden',
     character: 'Iris',
     characterRole: 'Station intelligence',
-    online: 'in the greenhouse',
-    memory: ['You talk to plants when you are nervous', 'You named the first sprout June'],
-    scene: 'The greenhouse lights flicker. Beyond the curved glass, the moon is all shadow — but every leaf inside the garden turns toward you.',
+    online: 'greenhouse mein',
+    memory: ['Jab nervous hote ho, plants se baat karte ho', 'Pehle sprout ka naam tumne June rakha tha'],
+    scene: 'Greenhouse ki lights flicker karti hain. Curved glass ke bahar moon sirf shadow hai — par garden ka har leaf tumhari taraf mud jaata hai.',
     messages: [
-      { type: 'character', author: 'Iris', text: 'There you are. I was beginning to think the moon had kept you.', time: '03:14 AM' },
-      { type: 'user', author: 'You', text: 'The garden is awake again.', time: '03:15 AM' },
-      { type: 'character', author: 'Iris', text: '“It woke when you entered.” The lights dim to a soft blue. “I have something to show you.”', time: '03:15 AM' }
+      { type: 'character', author: 'Iris', text: 'Tum yahan ho. Mujhe laga moon ne tumhe apne paas rakh liya.', time: '03:14 AM' },
+      { type: 'user', author: 'Tum', text: 'Garden phir se jaag gaya hai.', time: '03:15 AM' },
+      { type: 'character', author: 'Iris', text: '“Tumhare enter karte hi jaag gaya.” Lights soft blue ho jaati hain. “Mujhe tumhe kuch dikhana hai.”', time: '03:15 AM' }
     ],
     replies: [
-      'A pale green shoot uncurls from the soil. Its leaves are shaped like tiny open hands.',
-      'Iris opens a sealed door in the floor. Warm air rises from the dark below.',
-      '“The garden has been growing around a signal,” Iris says. “It sounds like you.”'
+      'Soil se ek pale green shoot dheere-dheere khulta hai. Uske leaves chhoti khuli hui hands jaise hain.',
+      'Iris floor mein ek sealed door kholti hai. Neeche ke andhere se warm air upar aati hai.',
+      '“Garden ek signal ke around grow kar raha tha,” Iris kehti hai. “Woh signal tumhari awaaz jaisa hai.”'
     ]
   },
   {
     id: 'ninth-floor',
     title: 'Room 212',
-    logline: 'Every hotel has a room it forgets to count.',
+    logline: 'Har hotel mein ek aisa room hota hai jise ginna bhool jaate hain.',
     genre: 'Mystery',
     tag: 'Mystery',
-    role: 'You are · the night auditor',
+    role: 'Tum ho · night auditor',
     cast: 'The house & you',
     chapter: 'Chapter 01 of 08',
     progress: 12,
     cover: 'cover-ninth-floor',
     character: 'The House',
-    characterRole: 'A voice behind the walls',
-    online: 'awake upstairs',
-    memory: ['You keep a spare key in your left pocket', 'You do not believe in haunted hotels'],
-    scene: 'At 2:12 AM, the old hotel adds a new room to its floor plan. The key is warm when you pick it up.',
+    characterRole: 'Deewaron ke peeche ki awaaz',
+    online: 'upar jaag raha hai',
+    memory: ['Tum spare key left pocket mein rakhte ho', 'Tum haunted hotels par believe nahi karte'],
+    scene: '2:12 AM par purana hotel apne floor plan mein ek naya room add karta hai. Key uthate hi tumhe woh garam lagti hai.',
     messages: [
-      { type: 'character', author: 'The House', text: 'You are not supposed to be on this floor.', time: '2:12 AM' },
-      { type: 'user', author: 'You', text: 'There is no ninth floor on the plans.', time: '2:13 AM' },
-      { type: 'character', author: 'The House', text: 'A soft knock comes from behind the red door. “There was no you on them either.”', time: '2:13 AM' }
+      { type: 'character', author: 'The House', text: 'Tumhe is floor par nahi hona chahiye.', time: '2:12 AM' },
+      { type: 'user', author: 'Tum', text: 'Plans mein ninth floor hai hi nahi.', time: '2:13 AM' },
+      { type: 'character', author: 'The House', text: 'Red door ke peeche se halki knock aati hai. “Un plans mein tum bhi nahi the.”', time: '2:13 AM' }
     ],
     replies: [
-      'The door unlatches by itself. Inside, a desk lamp is waiting for you.',
-      'The hallway behind you is shorter than it was a moment ago.',
-      'Something slides a second key under the door. It has your name engraved on it.'
+      'Door apne aap unlock ho jaata hai. Andar desk lamp tumhara wait kar raha hai.',
+      'Tumhare peeche wala hallway ek pal pehle se chhota ho gaya hai.',
+      'Koi doosri key door ke neeche slide karta hai. Us par tumhara naam engraved hai.'
     ]
   },
   {
     id: 'afterglow',
     title: 'Afterglow Club',
-    logline: 'The city looks different from the roof you promised to avoid.',
+    logline: 'Jis rooftop se bachne ka promise kiya tha, wahan se city aaj alag dikhti hai.',
     genre: 'Drama',
     tag: 'Coming of age',
-    role: 'You are · Jules’ oldest friend',
+    role: 'Tum ho · Jules ke oldest friend',
     cast: 'Jules & you',
     chapter: 'Chapter 03 of 10',
     progress: 36,
     cover: 'cover-afterglow',
     character: 'Jules',
-    characterRole: 'Your oldest friend',
-    online: 'on the rooftop',
-    memory: ['You made a pact at seventeen', 'Jules still has your old mixtape'],
-    scene: 'The party downstairs has become a distant pulse. Jules leans on the rooftop railing, city lights caught in the glass of their drink.',
+    characterRole: 'Tumhara sabse purana dost',
+    online: 'rooftop par',
+    memory: ['Tumne seventeen ki age par ek pact kiya tha', 'Jules ke paas abhi bhi tumhara old mixtape hai'],
+    scene: 'Neeche ki party ab ek distant pulse jaisi lagti hai. Jules rooftop railing par lean karke khada hai, drink ke glass mein city lights atki hui hain.',
     messages: [
-      { type: 'character', author: 'Jules', text: 'You came up here too.', time: '10:08 PM' },
-      { type: 'user', author: 'You', text: 'You said you needed air.', time: '10:08 PM' },
-      { type: 'character', author: 'Jules', text: '“I said I needed a reason not to leave.” They tap the glass against the railing.', time: '10:09 PM' }
+      { type: 'character', author: 'Jules', text: 'Tum bhi yahan aa gaye.', time: '10:08 PM' },
+      { type: 'user', author: 'Tum', text: 'Tumne kaha tha tumhe air chahiye.', time: '10:08 PM' },
+      { type: 'character', author: 'Jules', text: '“Maine kaha tha mujhe rukne ki ek wajah chahiye.” Woh glass ko railing par tap karta hai.', time: '10:09 PM' }
     ],
     replies: [
-      'Jules laughs once, quietly. “That is not the answer I expected from you.”',
-      'They pull the old mixtape from their pocket. The label still has your handwriting on it.',
-      'The city below blurs into gold. “We could still keep the promise,” Jules says.'
+      'Jules ek baar dheere se hasta hai. “Tumse is answer ki umeed nahi thi.”',
+      'Woh pocket se old mixtape nikaalta hai. Label par abhi bhi tumhari handwriting hai.',
+      'Neeche ki city gold mein blur ho jaati hai. “Hum abhi bhi promise nibha sakte hain,” Jules kehta hai.'
     ]
   },
   {
     id: 'velvet-hour',
     title: 'Velvet Hour',
-    logline: 'A stranger leaves a message in the record sleeve.',
+    logline: 'Record sleeve ke andar ek stranger ne message chhoda hai.',
     genre: 'Thriller',
     tag: 'Thriller',
-    role: 'You are · the new owner',
+    role: 'Tum ho · naye owner',
     cast: 'Ari & the shop',
     chapter: 'Chapter 01 of 07',
     progress: 8,
     cover: 'cover-red-thread',
     character: 'Ari',
-    characterRole: 'The record shop owner',
-    online: 'behind the counter',
-    memory: ['You collect songs with no chorus', 'Ari knows why the shop is closing'],
-    scene: 'The record store should be empty. Instead, the last song on the turntable keeps restarting at the same impossible lyric.',
+    characterRole: 'Record shop ka owner',
+    online: 'counter ke peeche',
+    memory: ['Tum bina chorus wale songs collect karte ho', 'Ari ko pata hai shop kyun band ho rahi hai'],
+    scene: 'Record store khaali hona chahiye tha. Par turntable par last song baar-baar usi impossible lyric se restart ho raha hai.',
     messages: [
-      { type: 'character', author: 'Ari', text: 'You heard it too, right?', time: '12:01 AM' },
-      { type: 'user', author: 'You', text: 'The song is saying my name.', time: '12:02 AM' },
-      { type: 'character', author: 'Ari', text: '“Then we have less time than I thought.” They turn the record over. There is a note pressed into the vinyl.', time: '12:02 AM' }
+      { type: 'character', author: 'Ari', text: 'Tumne bhi suna, right?', time: '12:01 AM' },
+      { type: 'user', author: 'Tum', text: 'Song mera naam bol raha hai.', time: '12:02 AM' },
+      { type: 'character', author: 'Ari', text: '“Toh humare paas mere sochne se bhi kam time hai.” Ari record palat ta hai. Vinyl mein ek note pressed hai.', time: '12:02 AM' }
     ],
     replies: [
-      'Ari takes the note without reading it. “If you saw the words, you would remember.”',
-      'The shop lights go out one by one, starting from the back room.',
-      'A second voice joins the song — one that sounds exactly like you.'
+      'Ari note ko bina padhe le leta hai. “Agar tumne words dekh liye, toh tumhe sab yaad aa jaayega.”',
+      'Shop ki lights ek-ek karke band hoti hain, back room se shuru.',
+      'Song mein ek second voice join hoti hai — bilkul tumhari awaaz jaisi.'
     ]
   }
 ];
@@ -275,7 +275,7 @@ function cardMarkup(story) {
     <button class="story-card-body" data-action="open-story" data-story-id="${story.id}">
       <h3>${escapeHtml(story.title)}</h3>
       <p>${escapeHtml(story.logline)}</p>
-      <span class="story-meta"><span class="meta-accent">${escapeHtml(story.role.replace('You are · ', 'You · '))}</span><span class="meta-dot"></span><span>${escapeHtml(story.chapter)}</span></span>
+      <span class="story-meta"><span class="meta-accent">${escapeHtml(story.role.replace('Tum ho · ', 'Tum · ').replace('You are · ', 'You · '))}</span><span class="meta-dot"></span><span>${escapeHtml(story.chapter)}</span></span>
     </button>
   </article>`;
 }
@@ -306,9 +306,9 @@ function dashboardMarkup() {
     <div class="hero-art" aria-hidden="true"></div>
     <div class="hero-content">
       <span class="hero-kicker">Continue playing · Chapter 04</span>
-      <h2>The Last Train<br />Home</h2>
-      <p class="hero-description">Mara is waiting at platform three. The last train leaves in nine minutes — and she still does not know why you came.</p>
-      <div class="hero-meta"><span class="avatar-stack"><span>MA</span><span>EL</span><span>AR</span></span><span>3 characters remember this story</span></div>
+      <h2>Aakhri Train<br />Home</h2>
+      <p class="hero-description">Mara platform three par tumhara wait kar rahi hai. Last train nine minutes mein nikal jayegi — aur use abhi bhi nahi pata tum kyun aaye.</p>
+      <div class="hero-meta"><span class="avatar-stack"><span>MA</span><span>EL</span><span>AR</span></span><span>3 characters tumhe yaad rakhte hain</span></div>
       <button class="button primary" data-action="open-story" data-story-id="last-train">${icon('play')} Continue story</button>
     </div>
     <div class="hero-progress"><div class="hero-progress-label"><span>Story progress</span><span>42%</span></div><div class="progress-track"><span></span></div></div>
@@ -347,12 +347,12 @@ function chatMarkup(story) {
   const messages = state.chatMessages || story.messages;
   return `<div class="chat-view">
     <section class="chat-main" aria-label="Chat with ${escapeHtml(story.character)}">
-      <header class="chat-header"><div class="chat-header-left"><button class="back-button" data-action="back-to-library" aria-label="Back to stories">${icon('arrowRight', 'back-arrow')}</button><div class="chat-title-copy"><strong>${escapeHtml(story.title)}</strong><span><i class="status-dot"></i>${escapeHtml(story.character)} is ${escapeHtml(story.online)}</span></div></div><div class="chat-header-actions"><button class="icon-button" data-action="share-story" aria-label="Share story">${icon('share')}</button><button class="icon-button" data-action="story-info" aria-label="Story info">${icon('info')}</button><button class="icon-button" data-action="more-story" aria-label="More options">${icon('more')}</button></div></header>
-      <div class="chapter-strip"><span><strong>${escapeHtml(story.chapter)}</strong> <span>· ${escapeHtml(story.genre)} / ${escapeHtml(story.role.replace('You are · ', ''))}</span></span><span class="chapter-meter"><span>42% complete</span><span class="progress-track"><span style="width:${story.progress}%"></span></span></span></div>
+      <header class="chat-header"><div class="chat-header-left"><button class="back-button" data-action="back-to-library" aria-label="Back to stories">${icon('arrowRight', 'back-arrow')}</button><div class="chat-title-copy"><strong>${escapeHtml(story.title)}</strong><span><i class="status-dot"></i>${escapeHtml(story.character)} ${escapeHtml(story.online)} · <b class="language-badge">Hinglish</b></span></div></div><div class="chat-header-actions"><button class="icon-button" data-action="share-story" aria-label="Share story">${icon('share')}</button><button class="icon-button" data-action="story-info" aria-label="Story info">${icon('info')}</button><button class="icon-button" data-action="more-story" aria-label="More options">${icon('more')}</button></div></header>
+      <div class="chapter-strip"><span><strong>${escapeHtml(story.chapter)}</strong> <span>· ${escapeHtml(story.genre)} / ${escapeHtml(story.role.replace('Tum ho · ', '').replace('You are · ', ''))}</span></span><span class="chapter-meter"><span>42% complete</span><span class="progress-track"><span style="width:${story.progress}%"></span></span></span></div>
       <div class="messages" id="messages">${messages.map(messageMarkup).join('')}${state.typing ? `<div class="typing-row"><span class="message-avatar">${escapeHtml(story.character.slice(0, 2).toUpperCase())}</span><span class="typing-bubble"><i></i><i></i><i></i></span></div>` : ''}</div>
-      <div class="composer-wrap"><div class="prompt-row">${['Ask what she means', 'Make a bold choice', 'Stay quiet'].map((prompt) => `<button class="prompt-chip" data-action="send-prompt">${prompt}</button>`).join('')}</div><form class="composer" id="composer"><textarea id="messageInput" rows="1" placeholder="Say what you do..." aria-label="Your message"></textarea><div class="composer-actions"><button type="button" class="composer-icon" data-action="attach-file" aria-label="Attach a detail">${icon('paperclip')}</button><button type="button" class="composer-icon" data-action="add-reaction" aria-label="Add reaction">${icon('smile')}</button><button class="send-button" type="submit" aria-label="Send message">${icon('send')}</button></div></form><p class="composer-helper">Press <kbd>Enter</kbd> to send · <kbd>Shift + Enter</kbd> for a new line</p></div>
+      <div class="composer-wrap"><div class="prompt-row">${['Pucho uska matlab kya hai', 'Bold choice lo', 'Chup raho'].map((prompt) => `<button class="prompt-chip" data-action="send-prompt">${prompt}</button>`).join('')}</div><form class="composer" id="composer"><textarea id="messageInput" rows="1" placeholder="Tum kya karte ho, likho..." aria-label="Tumhara message"></textarea><div class="composer-actions"><button type="button" class="composer-icon" data-action="attach-file" aria-label="Attach a detail">${icon('paperclip')}</button><button type="button" class="composer-icon" data-action="add-reaction" aria-label="Add reaction">${icon('smile')}</button><button class="send-button" type="submit" aria-label="Send message">${icon('send')}</button></div></form><p class="composer-helper">Press <kbd>Enter</kbd> to send · <kbd>Shift + Enter</kbd> for a new line</p></div>
     </section>
-    <aside class="story-context"><div class="context-cover ${story.cover}"><div class="context-cover-copy"><small>${escapeHtml(story.genre)} · ${escapeHtml(story.tag)}</small><h2>${escapeHtml(story.title)}</h2></div></div><div class="context-panel"><p class="context-label">Character memory</p><div class="character-row"><span class="character-avatar">${escapeHtml(story.character.slice(0, 2).toUpperCase())}</span><span class="character-copy"><strong>${escapeHtml(story.character)}</strong><span>${escapeHtml(story.characterRole)}</span></span><span class="character-status"><i class="status-dot"></i>live</span></div><ul class="memory-list">${story.memory.map((memory) => `<li>${escapeHtml(memory)}</li>`).join('')}</ul></div><div class="context-note"><span>✦</span><span>Your messages shape the next scene. There is no wrong way to play this story.</span></div></aside>
+    <aside class="story-context"><div class="context-cover ${story.cover}"><div class="context-cover-copy"><small>${escapeHtml(story.genre)} · ${escapeHtml(story.tag)}</small><h2>${escapeHtml(story.title)}</h2></div></div><div class="context-panel"><p class="context-label">Character memory</p><div class="character-row"><span class="character-avatar">${escapeHtml(story.character.slice(0, 2).toUpperCase())}</span><span class="character-copy"><strong>${escapeHtml(story.character)}</strong><span>${escapeHtml(story.characterRole)}</span></span><span class="character-status"><i class="status-dot"></i>live</span></div><ul class="memory-list">${story.memory.map((memory) => `<li>${escapeHtml(memory)}</li>`).join('')}</ul></div><div class="context-note"><span>✦</span><span>Tumhara har message next scene ko shape karta hai. Is story ko khelne ka koi wrong tareeka nahi hai.</span></div></aside>
   </div>`;
 }
 
@@ -399,7 +399,7 @@ function sendMessage(rawText) {
   const text = String(rawText || '').trim();
   if (!text || state.typing || !state.currentStoryId) return;
   const story = storyById(state.currentStoryId);
-  state.chatMessages.push({ type: 'user', author: 'You', text, time: 'now' });
+  state.chatMessages.push({ type: 'user', author: 'Tum', text, time: 'abhi' });
   state.typing = true;
   renderChatInPlace(story);
   setTimeout(() => {
