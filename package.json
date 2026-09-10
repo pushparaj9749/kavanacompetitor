@@ -1,0 +1,10 @@
+{
+  "name": "kavana-story-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A cinematic story chat prototype inspired by research into AI character storytelling.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  }
+}

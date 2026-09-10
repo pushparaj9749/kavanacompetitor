@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b11" />
+    <meta name="description" content="Kavana — cinematic AI story chat." />
+    <title>Kavana — Story chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+          <a class="brand" href="#" data-action="go-home" aria-label="Kavana home">
+            <span class="brand-mark" aria-hidden="true"><span></span><i></i></span>
+            <span class="brand-word">kavana</span>
+          </a>
+          <button class="icon-button sidebar-close" data-action="close-sidebar" aria-label="Close navigation"></button>
+        </div>
+
+        <button class="search-trigger" data-action="open-search" aria-label="Search stories">
+          <span class="search-icon" aria-hidden="true"></span>
+          <span>Search stories</span>
+          <kbd>⌘ K</kbd>
+        </button>
+
+        <nav class="side-nav" aria-label="Main navigation">
+          <p class="nav-label">Library</p>
+          <button class="nav-item is-active" data-view="explore">
+            <span class="nav-icon" data-icon="compass" aria-hidden="true"></span>
+            <span>Explore</span>
+            <span class="nav-count">12</span>
+          </button>
+          <button class="nav-item" data-view="discover">
+            <span class="nav-icon" data-icon="sparkles" aria-hidden="true"></span>
+            <span>For you</span>
+          </button>
+          <button class="nav-item" data-view="saved">
+            <span class="nav-icon" data-icon="bookmark" aria-hidden="true"></span>
+            <span>Saved stories</span>
+            <span class="nav-count muted-count" id="savedCount">3</span>
+          </button>
+
+          <div class="nav-divider"></div>
+          <div class="recent-heading">
+            <p class="nav-label">Continue playing</p>
+            <button class="text-action" data-action="show-all-recent">See all</button>
+          </div>
+          <div class="recent-list" id="recentList"></div>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="plan-card">
+            <span class="plan-spark" aria-hidden="true">✦</span>
+            <p class="plan-eyebrow">MAKE IT YOURS</p>
+            <h3>Write a world<br />only you know.</h3>
+            <button data-action="create-story">Start a story <span aria-hidden="true">↗</span></button>
+          </div>
+          <button class="profile-card" data-action="profile-menu">
+            <span class="profile-avatar">AR</span>
+            <span class="profile-copy"><strong>Aria Reed</strong><small>Personal space</small></span>
+            <span class="profile-more" aria-hidden="true">•••</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content" id="mainContent">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-button menu-button" data-action="open-sidebar" aria-label="Open navigation"></button>
+            <div class="breadcrumb"><span>STORYROOM</span><b>/</b><strong id="breadcrumbCurrent">EXPLORE</strong></div>
+          </div>
+          <div class="topbar-actions">
+            <div class="streak-pill" title="Your reading streak"><span class="streak-fire">✦</span><strong>4</strong><span>day streak</span></div>
+            <button class="icon-button notification-button" data-action="notifications" aria-label="Notifications"><span class="notification-dot"></span></button>
+            <button class="top-profile" data-action="profile-menu" aria-label="Open profile"><span>AR</span></button>
+          </div>
+        </header>
+
+        <div id="appView" class="app-view" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <div class="mobile-tabbar" id="mobileTabbar">
+      <button class="mobile-tab is-active" data-view="explore"><span data-icon="compass" aria-hidden="true"></span><small>Explore</small></button>
+      <button class="mobile-tab" data-view="discover"><span data-icon="sparkles" aria-hidden="true"></span><small>For you</small></button>
+      <button class="mobile-tab" data-view="saved"><span data-icon="bookmark" aria-hidden="true"></span><small>Saved</small></button>
+      <button class="mobile-tab" data-action="profile-menu"><span data-icon="user" aria-hidden="true"></span><small>Profile</small></button>
+    </div>
+
+    <div class="modal-layer" id="modalLayer" hidden>
+      <div class="modal-backdrop" data-action="close-modal"></div>
+      <section class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+        <div class="search-modal-head">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Search characters, moods, stories..." aria-label="Search stories" />
+          <button class="modal-key" data-action="close-modal">ESC</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </section>
+      <section class="simple-modal" id="simpleModal" role="dialog" aria-modal="true" hidden></section>
+    </div>
+
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
