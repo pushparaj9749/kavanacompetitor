@@ -3,86 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Demo — Ready to Adapt</title>
+<title>AF Technologies — Bardhhaman | Competitor Demo</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@600;700&display=swap');
-  :root{--ink:#0b0c15;--surface:#f5f5fa;--card:#fff;--accent:#6b4ee6;--muted:#6b6b7b;--line:#e3e3e8}
+  :root{--ink:#0b0c15;--surface:#f7f7fa;--card:#fff;--accent:#6b4ee6;--muted:#6b6b7b;--line:#e3e3e8;--win:#2a9d8f;--loss:#e76f51}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Inter",system-ui,sans-serif;background:var(--surface);color:var(--ink);line-height:1.45}
-  header{background:linear-gradient(135deg,#0b0c15 0%,#1a1030 100%);color:#fff;padding:6rem 2rem 4rem}
+  header{background:linear-gradient(135deg,#0b0c15 0%,#2a1035 100%);color:#fff;padding:6rem 2rem 4rem;position:relative;overflow:hidden}
+  header::before{content:"";position:absolute;top:-40%;right:-10%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(107,78,230,.35) 0%,transparent 70%);pointer-events:none}
   .container{max-width:1000px;margin:0 auto;padding:0 2rem}
-  h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.03em;line-height:1.1}
-  .gradient-text{background:linear-gradient(135deg,#c084fc,#6b4ee6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .subtitle{color:#c7c7d6;font-size:1.1rem;margin-top:.8rem;max-width:600px}
-  .badge{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.3rem .9rem;border-radius:9999px;font-size:.8rem;margin-bottom:1.2rem}
-  .box{background:var(--card);border:1px solid var(--line);border-radius:1.2rem;padding:2rem;margin-top:2rem;box-shadow:0 10px 40px rgba(11,12,21,.08)}
-  .box h2{font-family:"Space Grotesk",sans-serif;font-size:1.2rem;margin-bottom:.5rem}
-  .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:.6rem}
-  table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.6rem}
-  th{background:#0b0c15;color:#fff;text-align:left;padding:.8rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
-  td{padding:.8rem;border-bottom:1px solid var(--line)}
-  tr:hover td{background:#f8f8fb}
+  h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.03em;margin-bottom:.6rem}
+  h1 .gradient-text{background:linear-gradient(135deg,#c084fc,#6b4ee6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .badge{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.35rem .9rem;border-radius:9999px;font-size:.82rem;font-weight:500;margin-bottom:1rem}
+  .subtitle{font-size:1.05rem;color:#c7c7d6;max-width:640px;margin-bottom:1.5rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:1.25rem;padding:2rem;box-shadow:0 10px 40px rgba(11,12,21,.06);transition:transform .15s ease,box-shadow .15s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(11,12,21,.1)}
+  .card h2{font-family:"Space Grotesk",sans-serif;font-size:1.15rem;margin-bottom:.4rem}
+  .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent);margin-bottom:.7rem}
+  .metric{display:flex;justify-content:space-between;padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  .metric:last-child{border-bottom:0}
+  .metric .val{font-weight:600}
+  .win{color:var(--win);font-weight:700}.loss{color:var(--loss);font-weight:600}
+  .table-wrap{overflow-x:auto;margin-top:3rem;border:1px solid var(--line);border-radius:1rem;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  thead th{background:#0b0c15;color:#fff;text-align:left;padding:1rem;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+  tbody td{padding:1rem;border-bottom:1px solid var(--line)}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:#f0f0f7}
   .center{text-align:center}
-  .btn{display:inline-block;background:var(--ink);color:#fff;padding:.9rem 1.8rem;border-radius:.7rem;font-weight:600;text-decoration:none;margin-top:1.5rem;box-shadow:0 8px 25px rgba(11,12,21,.2)}
-  .btn:hover{background:#1a1030}
-  .note{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.5rem;margin-top:3rem;font-size:.9rem;color:#555}
+  .badge-sm{display:inline-block;padding:.2rem .6rem;border-radius:9999px;font-size:.75rem;font-weight:600;background:#e9e4ff;color:#5b3eb8}
+  .cta{text-align:center;padding:5rem 2rem 3rem}
+  .cta h2{font-family:"Space Grotesk",sans-serif;font-size:1.7rem;margin-bottom:.8rem}
+  .cta p{color:var(--muted);margin-bottom:1.2rem}
+  a.btn{display:inline-block;background:var(--ink);color:#fff;padding:.9rem 1.8rem;border-radius:.75rem;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(11,12,21,.25);transition:background .2s}
+  a.btn:hover{background:#1a1030}
+  .note{max-width:800px;margin:3rem auto 0;padding:1.5rem;background:#fff;border:1px solid var(--line);border-radius:1rem;font-size:.92rem;color:#555}
   footer{background:var(--ink);color:#a0a0b0;text-align:center;padding:2rem;font-size:.8rem;margin-top:3rem}
-  @media(max-width:640px){h1{font-size:2rem}.box{padding:1.2rem}}
+  @media(max-width:720px){header{padding:4rem 1.5rem 3rem}h1{font-size:2rem}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="container">
-    <div class="badge">Generic Client Template • Replace "Your Brand" anywhere</div>
-    <h1>Client <span class="gradient-text">Landing Page</span></h1>
-    <p class="subtitle">Repo naam ignore kiya. Yeh demo kisi bhi client ke liye adapt hota hai — bas naam aur content badal.</p>
+    <div class="badge">Selected Client • AF Technologies • Bardhhaman • Demo Only — No Email Sent</div>
+    <h1>AF Technologies <span class="gradient-text">Bardhhaman</span></h1>
+    <p class="subtitle">Verified since 2012 (Kusumgram, Manteswar). Competitor analysis + landing page demo built for actual outreach. No spam, no blind emails.</p>
   </div>
 </header>
 
 <main class="container">
 
-  <section class="box" aria-label="Quick info">
-    <div class="label">Client Ready Template</div>
-    <h2>What you get</h2>
-    <p style="color:#555;font-size:.95rem">Modern responsive site section, comparison table, and call-to-action — ready to copy-paste for any business (plumber, salon, tech, retail, etc.).</p>
+  <section aria-label="Quick cards" class="grid">
+    <article class="card">
+      <div class="label">AF Technologies (Target)</div>
+      <h2>Position</h2>
+      <div class="metric"><span>Established</span><span class="val">2012</span></div>
+      <div class="metric"><span>Verification</span><span class="val win">+8 yrs Verified</span></div>
+      <div class="metric"><span>Location</span><span class="val">Kusumgram, Manteswar, Bardhhaman</span></div>
+      <div class="metric"><span>Site / SEO</span><span class="val loss">Weak / Not Found</span></div>
+      <div class="metric"><span>Strength</span><span class="val">Old + Trusted</span></div>
+    </article>
+
+    <article class="card">
+      <div class="label">Webs Agency (Competitor)</div>
+      <h2>Position</h2>
+      <div class="metric"><span>Established</span><span class="val">2015</span></div>
+      <div class="metric"><span>Verification</span><span class="val">+10 yrs Verified</span></div>
+      <div class="metric"><span>Location</span><span class="val">Gangpur Hattala, Bardhhaman</span></div>
+      <div class="metric"><span>Site / SEO</span><span class="val win">Active</span></div>
+      <div class="metric"><span>Threat</span><span class="val">Higher visibility</span></div>
+    </article>
+
+    <article class="card">
+      <div class="label">Market Gap</div>
+      <h2>Opportunity</h2>
+      <div class="metric"><span>Local Trade Gap</span><span class="val">~40-60% no site</span></div>
+      <div class="metric"><span>AF Advantage</span><span class="val">13 years experience</span></div>
+      <div class="metric"><span>Quick Win</span><span class="val win">Site + SEO + Comparison</span></div>
+      <div class="metric"><span>Price Range</span><span class="val">₹15k – ₹40k</span></div>
+    </article>
   </section>
 
-  <section class="box" aria-label="Service comparison">
-    <div class="label">Service / Price Comparison (Example)</div>
-    <h2>Plan Options</h2>
-    <table>
-      <thead><tr><th>Plan</th><th>Pages</th><th>SEO / Mobile</th><th>Price (INR)</th></tr></thead>
-      <tbody>
-        <tr><td>Basic</td><td>5</td><td>Responsive</td><td>₹8,000 – ₹15,000</td></tr>
-        <tr><td>Standard</td><td>10 + Blog</td><td>SEO + Speed</td><td>₹15,000 – ₹40,000</td></tr>
-        <tr><td>Premium</td><td>20 + E-com / CRM</td><td>Full SEO + Analytics</td><td>₹40,000 – ₹1,00,000</td></tr>
-      </tbody>
-    </table>
+  <section aria-label="Feature comparison" style="margin-top:3rem">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;margin-bottom:1rem">AF Technologies — Competitor Feature Matrix</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Factor</th><th class="center">AF Technologies</th><th class="center">Webs Agency</th><th class="center">Bees Fizz / 3Leaps</th></tr></thead>
+        <tbody>
+          <tr><td>Years Active</td><td class="center"><strong>2012 (13 yrs)</strong></td><td class="center">2015 (11 yrs)</td><td class="center">2017 / Unknown</td></tr>
+          <tr><td>Online Presence</td><td class="center"><span class="badge-sm">Weak / None</span></td><td class="center"><span class="badge-sm">Active</span></td><td class="center"><span class="badge-sm">None</span></td></tr>
+          <tr><td>Local SEO / Maps</td><td class="center"><span class="badge-sm">Not visible</span></td><td class="center"><span class="badge-sm">Likely present</span></td><td class="center"><span class="badge-sm">Not visible</span></td></tr>
+          <tr><td>Mobile / Responsive</td><td class="center"><span class="badge-sm">Unknown</span></td><td class="center"><span class="badge-sm">Yes (est.)</span></td><td class="center"><span class="badge-sm">No</span></td></tr>
+          <tr><td>Contact / Lead Capture</td><td class="center"><span class="badge-sm">Basic / Phone</span></td><td class="center"><span class="badge-sm">Form + Phone</span></td><td class="center"><span class="badge-sm">Unknown</span></td></tr>
+          <tr><td>Brand Trust</td><td class="center"><strong class="win">Verified + Old</strong></td><td class="center">Verified + Old</td><td class="center">Low</td></tr>
+          <tr><td>Growth Potential</td><td class="center"><strong class="win">High (first digital)</strong></td><td class="center">Medium</td><td class="center">Medium</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
-  <section class="box" aria-label="Why choose">
-    <div class="label">Position</div>
-    <h2>Why This Works for Any Client</h2>
-    <ul style="color:#333;line-height:1.6;font-size:.95rem;padding-left:1.2rem">
-      <li>Brand-agnostic — just replace text</li>
-      <li>Mobile-first, SEO-friendly structure</li>
-      <li>Can add real client data / images in minutes</li>
-      <li>Ready for win / loss comparison (like Kavana theme) if needed</li>
-    </ul>
+  <section class="cta" aria-label="Call to action">
+    <h2>Demo complete — ab kya?</h2>
+    <p>AF Technologies ka branded competitor demo bana diya. Email bhejne se pehle tu approve kare — ya is site ko aur polish karne ke liye bata.</p>
+    <a href="#" class="btn" onclick="event.preventDefault(); document.getElementById('status').scrollIntoView({behavior:'smooth'})">Status / Next Step</a>
   </section>
 
-  <section style="text-align:center;padding:2rem 0">
-    <a href="#" class="btn" onclick="event.preventDefault(); document.getElementById('final-note').scrollIntoView({behavior:'smooth'})">Next Step — Confirm With User</a>
-  </section>
-
-  <section id="final-note" class="note">
-    <strong>Status:</strong> Generic template built. No client assigned. No email sent. No Gmail used for sending. User said repo name = fun / ignore. Demo is ready for <strong>any client name the user picks</strong>. Just say the client name and I will adapt this template in minutes.
+  <section id="status" class="note">
+    <strong>Built:</strong> AF Technologies branded demo site (this file).<br>
+    <strong>Not sent:</strong> No email to AF Technologies. Draft file <code>draft_email_AF.md</code> exists but is <strong>NOT SENT</strong>.<br>
+    <strong>Gmail:</strong> Connected but NOT used for sending.<br>
+    <strong>Repo:</strong> <code>arena/98fb1829-kavanacompetitor</code> • Branch active.<br>
+    <strong>Ready:</strong> Once user approves, site can be deployed / customized / sent with draft.
   </section>
 
 </main>
 
-<footer>Generic Client Demo • Arena AI • No Email Sent • Branch: arena/98fb1829-kavanacompetitor</footer>
+<footer>AF Technologies Demo • Arena AI • No Email Sent • 2026</footer>
 
 </body>
 </html>
