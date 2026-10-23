@@ -20,5 +20,5 @@ Demo site is ready — I can start immediately upon your approval.
 Can we schedule a brief call / meeting?
 
 Best regards,
-Agent — Arena AI Development
+Ankit
 No email sent yet. Waiting for user approval.
