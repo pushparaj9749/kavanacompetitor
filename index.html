@@ -3,127 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kavana — Competitor Analysis Demo</title>
+<title>Client Demo — Ready to Adapt</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@600;700&display=swap');
-  :root{--ink:#0b0c15;--surface:#f7f7fa;--card:#fff;--accent:#6b4ee6;--accent2:#c084fc;--muted:#6b6b7b;--line:#e3e3e8;--win:#2a9d8f;--loss:#e76f51}
+  :root{--ink:#0b0c15;--surface:#f5f5fa;--card:#fff;--accent:#6b4ee6;--muted:#6b6b7b;--line:#e3e3e8}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Inter",system-ui,sans-serif;background:var(--surface);color:var(--ink);line-height:1.45}
-  header{background:linear-gradient(135deg,#0b0c15 0%,#2a1035 50%,#3a1b55 100%);color:#fff;padding:7rem 2rem 5rem;position:relative;overflow:hidden}
-  header::before{content:"";position:absolute;top:-30%;right:-15%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(192,132,252,.35) 0%,transparent 70%);pointer-events:none}
-  .container{max-width:1080px;margin:0 auto;padding:0 2rem}
-  h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
-  h1 .gradient-text{background:linear-gradient(135deg,#c084fc,#6b4ee6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .subtitle{font-size:1.1rem;color:#c7c7d6;max-width:640px;margin-bottom:2rem}
-  .badge{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.35rem .9rem;border-radius:9999px;font-size:.82rem;font-weight:500;margin-bottom:1.2rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:1.25rem;padding:2rem;box-shadow:0 12px 40px rgba(11,12,21,.06);transition:transform .15s ease,box-shadow .15s ease}
-  .card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(11,12,21,.1)}
-  .card h2{font-family:"Space Grotesk",sans-serif;font-size:1.2rem;margin-bottom:.3rem}
-  .card .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent);margin-bottom:.7rem}
-  .metric{display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.92rem}
-  .metric:last-child{border-bottom:0}
-  .metric .val{font-weight:600}
-  .win{color:var(--win);font-weight:700}.loss{color:var(--loss);font-weight:600}
-  .table-wrap{overflow-x:auto;margin-top:3rem;border:1px solid var(--line);border-radius:1rem;background:var(--card)}
-  table{width:100%;border-collapse:collapse;font-size:.92rem}
-  thead th{background:#0b0c15;color:#fff;text-align:left;padding:1rem;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
-  tbody td{padding:1rem;border-bottom:1px solid var(--line)}
-  tbody tr:last-child td{border-bottom:0}
-  tbody tr:hover{background:#f0f0f7}
+  header{background:linear-gradient(135deg,#0b0c15 0%,#1a1030 100%);color:#fff;padding:6rem 2rem 4rem}
+  .container{max-width:1000px;margin:0 auto;padding:0 2rem}
+  h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.03em;line-height:1.1}
+  .gradient-text{background:linear-gradient(135deg,#c084fc,#6b4ee6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .subtitle{color:#c7c7d6;font-size:1.1rem;margin-top:.8rem;max-width:600px}
+  .badge{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.3rem .9rem;border-radius:9999px;font-size:.8rem;margin-bottom:1.2rem}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:1.2rem;padding:2rem;margin-top:2rem;box-shadow:0 10px 40px rgba(11,12,21,.08)}
+  .box h2{font-family:"Space Grotesk",sans-serif;font-size:1.2rem;margin-bottom:.5rem}
+  .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:.6rem}
+  table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.6rem}
+  th{background:#0b0c15;color:#fff;text-align:left;padding:.8rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+  td{padding:.8rem;border-bottom:1px solid var(--line)}
+  tr:hover td{background:#f8f8fb}
   .center{text-align:center}
-  .badge-sm{display:inline-block;padding:.2rem .6rem;border-radius:9999px;font-size:.75rem;font-weight:600;background:#e9e4ff;color:#5b3eb8}
-  .cta{text-align:center;padding:5rem 2rem 3rem}
-  .cta h2{font-family:"Space Grotesk",sans-serif;font-size:1.8rem;margin-bottom:.7rem}
-  .cta p{color:var(--muted);margin-bottom:1.2rem}
-  a.btn{display:inline-block;background:var(--ink);color:#fff;padding:.85rem 1.8rem;border-radius:.75rem;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(11,12,21,.25);transition:background .2s}
-  a.btn:hover{background:#1a1030}
-  .repo-note{max-width:800px;margin:3rem auto 0;padding:1.5rem;background:#fff;border:1px solid var(--line);border-radius:1rem}
-  .repo-note h3{font-family:"Space Grotesk",sans-serif;font-size:1.1rem;margin-bottom:.5rem}
-  .repo-note p{color:var(--muted);font-size:.92rem}
-  footer{background:var(--ink);color:#a0a0b0;text-align:center;padding:2rem;font-size:.8rem}
-  @media(max-width:720px){header{padding:4rem 1.5rem 3rem}h1{font-size:2.1rem}.grid{grid-template-columns:1fr}}
+  .btn{display:inline-block;background:var(--ink);color:#fff;padding:.9rem 1.8rem;border-radius:.7rem;font-weight:600;text-decoration:none;margin-top:1.5rem;box-shadow:0 8px 25px rgba(11,12,21,.2)}
+  .btn:hover{background:#1a1030}
+  .note{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.5rem;margin-top:3rem;font-size:.9rem;color:#555}
+  footer{background:var(--ink);color:#a0a0b0;text-align:center;padding:2rem;font-size:.8rem;margin-top:3rem}
+  @media(max-width:640px){h1{font-size:2rem}.box{padding:1.2rem}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="container">
-    <div class="badge">Repo: kavanacompetitor • Demo for fun / maza • No client assigned</div>
-    <h1><span class="gradient-text">Kavana</span> vs Duniya</h1>
-    <p class="subtitle">Kavana ke competitors ka full comparison — price, features, market position. Yeh demo sirf repo name ke hisaab se bana hai, kisi ek client ka nahi.</p>
+    <div class="badge">Generic Client Template • Replace "Your Brand" anywhere</div>
+    <h1>Client <span class="gradient-text">Landing Page</span></h1>
+    <p class="subtitle">Repo naam ignore kiya. Yeh demo kisi bhi client ke liye adapt hota hai — bas naam aur content badal.</p>
   </div>
 </header>
 
 <main class="container">
 
-  <section aria-label="Quick cards">
-    <div class="grid">
-      <article class="card">
-        <div class="tag">Kavana (Repo Theme)</div>
-        <h2>Market Position</h2>
-        <div class="metric"><span>Price Range</span><span class="val">₹499 – ₹1,499</span></div>
-        <div class="metric"><span>Customer Score</span><span class="val win">4.8 / 5</span></div>
-        <div class="metric"><span>Market Share</span><span class="val">18%</span></div>
-        <div class="metric"><span>Key Strength</span><span class="val">Premium UX + Local Support</span></div>
-      </article>
-
-      <article class="card">
-        <div class="tag">Competitor A</div>
-        <h2>Market Position</h2>
-        <div class="metric"><span>Price Range</span><span class="val">₹299 – ₹999</span></div>
-        <div class="metric"><span>Customer Score</span><span class="val loss">3.9 / 5</span></div>
-        <div class="metric"><span>Market Share</span><span class="val">24%</span></div>
-        <div class="metric"><span>Key Weakness</span><span class="val">Slow Support, Limited Features</span></div>
-      </article>
-
-      <article class="card">
-        <div class="tag">Competitor B</div>
-        <h2>Market Position</h2>
-        <div class="metric"><span>Price Range</span><span class="val">₹199 – ₹799</span></div>
-        <div class="metric"><span>Customer Score</span><span class="val">4.2 / 5</span></div>
-        <div class="metric"><span>Market Share</span><span class="val">31%</span></div>
-        <div class="metric"><span>Key Weakness</span><span class="val">Price War, Low Brand Loyalty</span></div>
-      </article>
-    </div>
+  <section class="box" aria-label="Quick info">
+    <div class="label">Client Ready Template</div>
+    <h2>What you get</h2>
+    <p style="color:#555;font-size:.95rem">Modern responsive site section, comparison table, and call-to-action — ready to copy-paste for any business (plumber, salon, tech, retail, etc.).</p>
   </section>
 
-  <section aria-label="Detailed comparison" style="margin-top:3rem">
-    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;margin-bottom:1rem">Detailed Feature Comparison</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Feature</th><th class="center">Kavana</th><th class="center">Competitor A</th><th class="center">Competitor B</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Mobile App</td><td class="center"><span class="badge-sm">Yes</span></td><td class="center"><span class="badge-sm">Basic</span></td><td class="center"><span class="badge-sm">No</span></td></tr>
-          <tr><td>24/7 Support</td><td class="center"><span class="badge-sm">Yes</span></td><td class="center"><span class="badge-sm">No</span></td><td class="center"><span class="badge-sm">Limited</span></td></tr>
-          <tr><td>Customization</td><td class="center"><span class="badge-sm">Deep</span></td><td class="center"><span class="badge-sm">Medium</span></td><td class="center"><span class="badge-sm">Low</span></td></tr>
-          <tr><td>Local Payments</td><td class="center"><span class="badge-sm">All</span></td><td class="center"><span class="badge-sm">UPI + Card</span></td><td class="center"><span class="badge-sm">UPI Only</span></td></tr>
-          <tr><td>Data Export</td><td class="center"><span class="badge-sm">CSV, API</span></td><td class="center"><span class="badge-sm">CSV</span></td><td class="center"><span class="badge-sm">No</span></td></tr>
-          <tr><td>Onboarding Time</td><td class="center">10 min</td><td class="center">30 min</td><td class="center">15 min</td></tr>
-          <tr><td>Price / Month</td><td class="center"><strong>₹499</strong></td><td class="center">₹349</td><td class="center">₹199</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <section class="box" aria-label="Service comparison">
+    <div class="label">Service / Price Comparison (Example)</div>
+    <h2>Plan Options</h2>
+    <table>
+      <thead><tr><th>Plan</th><th>Pages</th><th>SEO / Mobile</th><th>Price (INR)</th></tr></thead>
+      <tbody>
+        <tr><td>Basic</td><td>5</td><td>Responsive</td><td>₹8,000 – ₹15,000</td></tr>
+        <tr><td>Standard</td><td>10 + Blog</td><td>SEO + Speed</td><td>₹15,000 – ₹40,000</td></tr>
+        <tr><td>Premium</td><td>20 + E-com / CRM</td><td>Full SEO + Analytics</td><td>₹40,000 – ₹1,00,000</td></tr>
+      </tbody>
+    </table>
   </section>
 
-  <section class="cta" aria-label="Note">
-    <h2>Yeh demo kyu bana?</h2>
-    <p>Repo naam tha <strong>kavanacompetitor</strong> → maza ke liye <strong>Kavana</strong> theme bana diya. Koi client fix nahi hai, koi mail nahi bheja. Agar tu chahe toh isse kisi real client ke liye adapt kar sakta hoon.</p>
-    <a href="#" class="btn" onclick="event.preventDefault(); document.getElementById('note').scrollIntoView({behavior:'smooth'})">Agent Note (Read)</a>
+  <section class="box" aria-label="Why choose">
+    <div class="label">Position</div>
+    <h2>Why This Works for Any Client</h2>
+    <ul style="color:#333;line-height:1.6;font-size:.95rem;padding-left:1.2rem">
+      <li>Brand-agnostic — just replace text</li>
+      <li>Mobile-first, SEO-friendly structure</li>
+      <li>Can add real client data / images in minutes</li>
+      <li>Ready for win / loss comparison (like Kavana theme) if needed</li>
+    </ul>
   </section>
 
-  <section id="note" class="repo-note">
-    <h3>Agent Note — No Client Assigned</h3>
-    <p><strong>Repo:</strong> <code>kavanacompetitor</code> (branch <code>arena/98fb1829-kavanacompetitor</code>, active)<br>
-    <strong>Work done:</strong> Cleaned repo → Built <strong>Kavana</strong> competitor demo (index.html) → Created draft templates (draft_email_AF.md / prospects.md) → <strong>No emails sent, Gmail not used for sending.</strong><br>
-    <strong>Purpose:</strong> Demo only, matching repo name/theme. User said "maje ke liye" → this fits. Ready to adapt for any real client when user approves.</p>
+  <section style="text-align:center;padding:2rem 0">
+    <a href="#" class="btn" onclick="event.preventDefault(); document.getElementById('final-note').scrollIntoView({behavior:'smooth'})">Next Step — Confirm With User</a>
+  </section>
+
+  <section id="final-note" class="note">
+    <strong>Status:</strong> Generic template built. No client assigned. No email sent. No Gmail used for sending. User said repo name = fun / ignore. Demo is ready for <strong>any client name the user picks</strong>. Just say the client name and I will adapt this template in minutes.
   </section>
 
 </main>
 
-<footer>Kavana Competitor Demo — Repo Theme • No Client • No Email Sent • 2026</footer>
+<footer>Generic Client Demo • Arena AI • No Email Sent • Branch: arena/98fb1829-kavanacompetitor</footer>
 
 </body>
 </html>
